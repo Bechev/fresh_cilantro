@@ -6,7 +6,7 @@ const link = {
     width: '100px',
     padding: '12px',
     margin: '0 6px 6px',
-    background: 'blue',
+    background: 'lightgrey',
     textDecoration: 'none',
     color: 'white',
 }
@@ -14,7 +14,7 @@ const link = {
   
 
 const Navbar = () =>
-  <div>
+  <div class="navbar">
     <NavLink
       to="/"
       /* set exact so it knows to only set activeStyle when route is deeply equal to link */
@@ -23,16 +23,25 @@ const Navbar = () =>
       style={link}
       /* add prop for activeStyle */
       activeStyle={{
-        background: 'lightblue'
+        background: 'darkgrey'
       }}
     >Home</NavLink>
-
+    
+    <NavLink
+      to="/brands"
+      exact
+      style={link}
+      activeStyle={{
+        background: 'darkgrey'
+      }}
+    >Brands</NavLink>
+    
     <NavLink
       to="/about"
       exact
       style={link}
       activeStyle={{
-        background: 'darkblue'
+        background: 'darkgrey'
       }}
     >About</NavLink>
   </div>;

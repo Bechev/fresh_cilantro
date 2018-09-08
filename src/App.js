@@ -4,6 +4,7 @@ import { Route} from 'react-router-dom'
 import './App.css';
 import Home from './components/Home.js'
 import About from './components/About.js'
+import Brands from './components/Brands.js'
 import NavigationBar from './components/NavigationBar'
 
 
@@ -17,6 +18,7 @@ export default class App extends Component {
       <NavigationBar />
         <React.Fragment>
           <Route exact path="/" component={Home} />
+          <Route exact path="/brands" component={Brands} />
           <Route exact path="/about" component={About} />
         </React.Fragment>,
       </div>
