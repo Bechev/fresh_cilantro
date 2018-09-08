@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom';
 import '../App.css';
-
 
 class Home extends Component {
 
@@ -10,15 +10,14 @@ class Home extends Component {
             <div>
                 <header className="header">Welcome to Fresh Cilantro Boutique</header>
                 <div>
-                    <ul>
-                        {this.props.items.map(item => {
-                            return (
-                            <p className="item">{item.name}<br></br>
-                            Brand: {item.brand}<br></br>
-                            Description: {item.description}</p>
-                            )
-                        })}
-                    </ul>
+                    {this.props.items.map(item => {
+                        return (
+                            <p>
+                                <Link key={item.id} to={`items/${item.id}`}>{item.name}</Link><br></br>
+                                Brand: {item.brand}<br></br>
+                                Description: {item.description}</p>
+                        )
+                    })}
                 </div>
             </div>
         )
