@@ -1,70 +1,46 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import { Route} from 'react-router-dom'
 import './App.css';
+import Home from './components/Home.js'
+import About from './components/About.js'
+import NavigationBar from './components/NavigationBar'
 
-// class App extends Component {
-//   render() {
-//     return (
-//       <div className="App">
-//         <header className="App-header">
-//           <h1 className="App-title">Welcome to Fresh Cilantro</h1>
-//         </header>
-//       </div>
-//     );
-//   }
-// }
 
-class App extends Component {
+export default class App extends Component {
  
-  addItemToBag = (event) => {
-    this.props.addItemToBag()
-  }
- 
-  removeItemToBag = (event) => {
-    this.props.removeItemToBag()
-  }
 
-  checkout = (event) => {
-    this.props.checkout()
-  }
-
-  empty_bag = (event) => {
-    this.props.empty_bag()
-  }
-
+  
   render() {
     return (
       <div className="App">
-        <button onClick={this.addItemToBag} >
-          Add item
-        </button>
-        <button onClick={this.removeItemToBag} >
-          Remove item
-        </button>
-        <button onClick={this.checkout} >
-          Checkout
-        </button>
-        <button onClick={this.empty_bag} >
-          Empty
-        </button>
+      <NavigationBar />
+        <React.Fragment>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={About} />
+        </React.Fragment>,
       </div>
     );
   }
 };
 
-const mapStateToProps = state => {
-  return {
-    bag: state.bag
-  }
-}
+// const mapStateToProps = state => {
+//   return {
+//     bag: state.bag,
+//     items: state.items
+//   }
+// }
  
-const mapDispatchToProps = dispatch => {
-  return {
-    addItemToBag: (item) => dispatch({type: 'ADD_ITEM_TO_BAG', payload: item}),
-    removeItemToBag: (item) => dispatch({type: 'REMOVE_ITEM_TO_BAG', payload: item}),
-    checkout: () => dispatch({type: 'CHECKOUT'}),
-    empty_bag: () => dispatch({type: 'EMPTY_BAG'})
-  }
-}
- 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     addItemToBag: () => dispatch({type: 'ADD_ITEM_TO_BAG', payload: {name: "Mini", brand: "Chanel"}}),
+//     removeItemToBag: (item) => dispatch({type: 'REMOVE_ITEM_TO_BAG', payload: item}),
+//     checkout: () => dispatch({type: 'CHECKOUT'}),
+//     empty_bag: () => dispatch({type: 'EMPTY_BAG'}),
+//     addItem: (item) => dispatch({type: 'ADD_ITEM', payload: item}),
+//     removeItem: (item) => dispatch({type: 'REMOVE_ITEM', payload: item}),
+//   }
+// }
+
+// export default connect(mapStateToProps, mapDispatchToProps)(App);
+
