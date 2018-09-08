@@ -1,12 +1,11 @@
 export default function itemsReducer(state = [
-    {name:"Kelly", brand:"Hermes"},
-    {name:"Mini", brand:"Chanel"},
-    {name:"WOC", brand:"Chanel"},
-    {name:"Espadrilles", brand:"Chanel"},
-    {name:"Phone case", brand:"Louis Vuiton"},
-    {name:"Sneakers", brand:"Gucci"},
-    {name:"Birkin", brand:"Hermes"},
-    {name:"Kelly", brand:"Hermes"}
+    {name:"Kelly", brand:"Hermes", description: "Empty description"},
+    {name:"Mini", brand:"Chanel", description: "Empty description"},
+    {name:"WOC", brand:"Chanel", description: "Empty description"},
+    {name:"Espadrilles", brand:"Chanel", description: "Empty description"},
+    {name:"Phone case", brand:"Louis Vuiton", description: "Empty description"},
+    {name:"Sneakers", brand:"Gucci", description: "Empty description"},
+    {name:"Birkin", brand:"Hermes", description: "Empty description"},
 ], action) {
 
 

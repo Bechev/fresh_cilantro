@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import '../App.css';
 
+
 class Home extends Component {
 
     render() {
@@ -11,7 +12,11 @@ class Home extends Component {
                 <div>
                     <ul>
                         {this.props.items.map(item => {
-                            return <li>{item.name}</li>
+                            return (
+                            <p className="item">{item.name}<br></br>
+                            Brand: {item.brand}<br></br>
+                            Description: {item.description}</p>
+                            )
                         })}
                     </ul>
                 </div>
@@ -23,6 +28,12 @@ class Home extends Component {
 const mapStateToProps = state => {
   return {
     items: state.items
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    addItemToBag: () => dispatch({type: 'ADD_ITEM_TO_BAG', payload: {name: "Mini", brand: "Chanel"}}),
   }
 }
 
