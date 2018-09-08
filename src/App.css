@@ -33,15 +33,32 @@ header {
   to { transform: rotate(360deg); }
 }
 
+.float{
+  float: left;
+  display: inline-block;
+}
 
 .item{
   border-style: solid;
   border-color: lightgrey;
   box-shadow: 1px 1px #888888;
-  width: 300px;
-  height: 100px;
-  /* text-align: center; */
-  padding: 2px 1px 1px 1px;
+  /* justify-content: center; */
+  width: 10em;
+  height: 10em;
+  padding: 1em;
+  margin: 1em;
+}
+
+.link{
+  border-style: solid;
+  border-color: lightgrey;
+  margin-left: auto;
+  box-shadow: 1px 1px #888888;
+  width: 11em;
+  height: 11em;
+}
+
+.cartItem{
   display: inline-block;
-  margin: 10px;
+  float: left;
 }

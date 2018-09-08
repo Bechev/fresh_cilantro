@@ -10,7 +10,8 @@ export function addItemToBag(item){
 export function removeItemToBag(item){
     return { 
         type: 'REMOVE_ITEM_TO_BAG',
-        itemID: item };
+        payload: item,
+    };
 };
 
 export const checkout = (name) => {

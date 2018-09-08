@@ -10,5 +10,5 @@ export function addItem(item){
 export function removeItem(item){
     return { 
         type: 'REMOVE_ITEM',
-        itemID: item };
+        payload: item };
 };

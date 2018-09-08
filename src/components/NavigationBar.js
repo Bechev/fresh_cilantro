@@ -37,6 +37,15 @@ const Navbar = () =>
     >Brands</NavLink>
     
     <NavLink
+      to="/my_bag"
+      exact
+      style={link}
+      activeStyle={{
+        background: 'goldenrod'
+      }}
+    >My bag</NavLink>
+
+    <NavLink
       to="/about"
       exact
       style={link}

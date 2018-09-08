@@ -1,16 +1,22 @@
-export default function bagReducer(state = [{name:"Kelly", brand:"Hermes"}], action) {
+export default function bagReducer(state = [
+    {id:6, name:"Sneakers", brand:"Gucci", description: "Empty description"},
+    {id:7, name:"Birkin", brand:"Hermes", description: "Empty description"},
+], action) {
 
 
     switch (action.type) {
 
         case 'ADD_ITEM_TO_BAG':
-            console.log("Added an item to the bag", state.bag);
-            console.log(action.item)
+            console.log(action.payload)
             return  [].concat(state, action.payload)
         
         case 'REMOVE_ITEM_TO_BAG':
-            console.log("Removed an item to the bag", state.bag);
-            return state.filter((val) => val !== action.payload)
+            console.log(action)
+            return state.filter((el) => {
+                // console.log("el.id: ", el.id)
+                // console.log("action.payload: ", action.payload)
+                return el.id !== action.payload
+            })
 
         case 'CHECKOUT':
             console.log("Checked-out", state.bag);

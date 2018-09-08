@@ -3,6 +3,7 @@ import { Route} from 'react-router-dom'
 import './App.css';
 import Home from './components/Home.js'
 import Brands from './components/Brands.js'
+import Mybag from './components/Mybag.js'
 import About from './components/About.js'
 import ItemShow from './components/ItemShow'
 import NavigationBar from './components/NavigationBar'
@@ -17,6 +18,7 @@ export default class App extends Component {
         <React.Fragment>
           <Route exact path='/' render={routerProps => <Home {...routerProps} items={this.props.items}/>} />
           <Route exact path={`/items/:itemID`} component={ItemShow}/>
+          <Route exact path="/my_bag" component={Mybag} />
           <Route exact path="/brands" component={Brands} />
           <Route exact path="/about" component={About} />
         </React.Fragment>

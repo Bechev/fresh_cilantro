@@ -12,7 +12,7 @@ export default function itemsReducer(state = [
     switch (action.type) {
 
         case 'ADD_ITEM':
-            console.log("Added an item", state.items);
+            console.log("Added an item", action.payload);
             console.log(action.item)
             return  [].concat(state, action.payload)
         
