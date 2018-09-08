@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import '../css/NavigationBar.css';
 
@@ -14,7 +14,7 @@ const link = {
   
 
 const Navbar = () =>
-  <div class="navbar">
+  <div className="navbar">
     <NavLink
       to="/"
       /* set exact so it knows to only set activeStyle when route is deeply equal to link */

@@ -6,7 +6,7 @@ export default class Brands extends Component{
 
     render(){
         return (
-            <header class="header">Brands</header>
+            <header className="header">Brands</header>
         )
     }
 }

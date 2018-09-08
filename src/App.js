@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
 import { Route} from 'react-router-dom'
 import './App.css';
 import Home from './components/Home.js'
@@ -20,7 +19,7 @@ export default class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/brands" component={Brands} />
           <Route exact path="/about" component={About} />
-        </React.Fragment>,
+        </React.Fragment>
       </div>
     );
   }
