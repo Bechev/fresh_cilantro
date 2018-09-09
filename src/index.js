@@ -25,3 +25,5 @@ ReactDOM.render(
 // Verify best practices for nested routing and how I get the link to the ItemsShow
 // Understand better id management => Error: Each child in array or iterator should have  a unique "key" prop (hone and mybag)
 // Better understand expectations for containers vs components
+// Stop propagation
+// Conflict for active style Navbar

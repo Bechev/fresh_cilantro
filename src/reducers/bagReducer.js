@@ -13,8 +13,6 @@ export default function bagReducer(state = [
         case 'REMOVE_ITEM_TO_BAG':
             console.log(action)
             return state.filter((el) => {
-                // console.log("el.id: ", el.id)
-                // console.log("action.payload: ", action.payload)
                 return el.id !== action.payload
             })
 
@@ -24,7 +22,7 @@ export default function bagReducer(state = [
 
         case 'EMPTY_BAG':
             console.log("Emptied bag", state.bag);
-            return {} // To be updated
+            return [] 
             
         default:
             return state;

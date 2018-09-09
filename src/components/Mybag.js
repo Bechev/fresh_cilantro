@@ -24,6 +24,8 @@ class Mybag extends Component {
                         </div>
                     )
                 })}
+                <Button name= "Empty bag" handleClick={() => this.props.empty_bag()}/><br></br>
+                <Button name= "Checkout" handleClick={() => this.props.checkout()}/><br></br>
             </div>
         )
     }
@@ -38,6 +40,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         removeItemToBag: (item) => dispatch({type: 'REMOVE_ITEM_TO_BAG', payload: item}),
+        checkout: () => dispatch({type: 'CHECKOUT'}),
+        empty_bag: () => dispatch({type: 'EMPTY_BAG'}),
     }
   }
 

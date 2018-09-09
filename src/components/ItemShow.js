@@ -10,8 +10,6 @@ class ItemShow extends Component{
         var item
     }
     
- 
-
     getItem(id) {
         return (
             this.props.items.filter(function (el) {

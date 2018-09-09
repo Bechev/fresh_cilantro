@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+// import { connect } from 'react-redux'
 import '../css/NavigationBar.css';
 
 const link = {
@@ -17,24 +18,21 @@ const Navbar = () =>
   <div className="navbar">
     <NavLink
       to="/"
-      /* set exact so it knows to only set activeStyle when route is deeply equal to link */
       exact
-      /* add styling to Navlink */
       style={link}
-      /* add prop for activeStyle */
       activeStyle={{
         background: 'goldenrod'
       }}
     >Home</NavLink>
     
     <NavLink
-      to="/brands"
+      to="/add_item"
       exact
       style={link}
       activeStyle={{
         background: 'goldenrod'
       }}
-    >Brands</NavLink>
+    >Request an Item</NavLink>
     
     <NavLink
       to="/my_bag"
@@ -44,6 +42,7 @@ const Navbar = () =>
         background: 'goldenrod'
       }}
     >My bag</NavLink>
+
 
     <NavLink
       to="/about"
@@ -57,3 +56,13 @@ const Navbar = () =>
 
 
 export default Navbar
+
+
+// const mapStateToProps = state => {
+//   return {
+//     bag: state.bag,
+//   }
+// }
+
+// export default connect(mapStateToProps)(App);
+
