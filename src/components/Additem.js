@@ -21,7 +21,7 @@ class Additem extends Component {
         this.assignItemID()
     }
 
-    createItemID() {
+    createItemID(){
         return (
             this.props.items[this.props.items.length -1].id + 1
         )

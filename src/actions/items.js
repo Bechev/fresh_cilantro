@@ -4,7 +4,6 @@ export function addItem(item){
         type: 'ADD_ITEM',
         payload: item,
         };
-        // item: item };
 };
 
 export function removeItem(item){

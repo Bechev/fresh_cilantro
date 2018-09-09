@@ -4,7 +4,6 @@ export function addItemToBag(item){
         type: 'ADD_ITEM_TO_BAG',
         payload: item,
         };
-        // item: item };
 };
 
 export function removeItemToBag(item){

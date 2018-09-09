@@ -1,4 +1,5 @@
 export default function bagReducer(state = [
+    {id:1, name:"Kelly", brand:"Hermes", description: "Empty description"},
     {id:6, name:"Sneakers", brand:"Gucci", description: "Empty description"},
     {id:7, name:"Birkin", brand:"Hermes", description: "Empty description"},
 ], action) {
@@ -18,7 +19,7 @@ export default function bagReducer(state = [
 
         case 'CHECKOUT':
             console.log("Checked-out", state.bag);
-            return {} // To be updated
+            return [] 
 
         case 'EMPTY_BAG':
             console.log("Emptied bag", state.bag);
