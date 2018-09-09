@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter  } from 'react-router-dom';
 import App from './App';
 import './index.css';
-
-import { createStore } from 'redux';
+import thunk from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux'; 
 import rootReducer from './reducers/rootReducer.js';
 
-const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(rootReducer, applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 
 ReactDOM.render(
@@ -27,3 +27,24 @@ ReactDOM.render(
 // Better understand expectations for containers vs components
 // Stop propagation
 // Conflict for active style Navbar
+
+
+// const mapStateToProps = state => {
+//   return {
+//     bag: state.bag,
+//     items: state.items
+//   }
+// }
+ 
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     addItemToBag: () => dispatch({type: 'ADD_ITEM_TO_BAG', payload: {name: "Mini", brand: "Chanel"}}),
+//     removeItemToBag: (item) => dispatch({type: 'REMOVE_ITEM_TO_BAG', payload: item}),
+//     checkout: () => dispatch({type: 'CHECKOUT'}),
+//     empty_bag: () => dispatch({type: 'EMPTY_BAG'}),
+//     addItem: (item) => dispatch({type: 'ADD_ITEM', payload: item}),
+//     removeItem: (item) => dispatch({type: 'REMOVE_ITEM', payload: item}),
+//   }
+// }
+
+// export default connect(mapStateToProps, mapDispatchToProps)(App);

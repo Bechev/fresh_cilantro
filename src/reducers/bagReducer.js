@@ -1,8 +1,4 @@
-export default function bagReducer(state = [
-    {id:1, name:"Kelly", brand:"Hermes", description: "Empty description"},
-    {id:6, name:"Sneakers", brand:"Gucci", description: "Empty description"},
-    {id:7, name:"Birkin", brand:"Hermes", description: "Empty description"},
-], action) {
+export default function bagReducer(state = [], action) {
 
 
     switch (action.type) {

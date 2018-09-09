@@ -5,15 +5,19 @@ import Home from './components/Home.js'
 import Additem from './components/Additem'
 import Mybag from './components/Mybag.js'
 import About from './components/About.js'
-import ItemShow from './components/ItemShow'
-import NavigationBar from './components/NavigationBar'
+import ItemShow from './components/ItemShow.js'
+import NavigationBar from './components/NavigationBar.js'
+import Fetchitems from './components/Fetchitems.js';
 
 
 export default class App extends Component {
  
+
+
   render() {
     return (
       <div className="App">
+      <Fetchitems/>
       <NavigationBar />
         <React.Fragment>
           <Route exact path='/' render={routerProps => <Home {...routerProps} items={this.props.items}/>} />
@@ -26,24 +30,4 @@ export default class App extends Component {
     );
   }
 };
-
-// const mapStateToProps = state => {
-//   return {
-//     bag: state.bag,
-//     items: state.items
-//   }
-// }
- 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     addItemToBag: () => dispatch({type: 'ADD_ITEM_TO_BAG', payload: {name: "Mini", brand: "Chanel"}}),
-//     removeItemToBag: (item) => dispatch({type: 'REMOVE_ITEM_TO_BAG', payload: item}),
-//     checkout: () => dispatch({type: 'CHECKOUT'}),
-//     empty_bag: () => dispatch({type: 'EMPTY_BAG'}),
-//     addItem: (item) => dispatch({type: 'ADD_ITEM', payload: item}),
-//     removeItem: (item) => dispatch({type: 'REMOVE_ITEM', payload: item}),
-//   }
-// }
-
-// export default connect(mapStateToProps, mapDispatchToProps)(App);
 
