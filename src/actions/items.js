@@ -1,7 +1,7 @@
 
 
 export function addItem(item){
-    fetch("http://localhost:3000/items.json", {
+    fetch("http://localhost:3000/items", {
         method: "POST",
         headers: {
             "Content-Type": "application/json; charset=utf-8"
