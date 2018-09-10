@@ -13,10 +13,10 @@ export function removeItemToBag(item){
     };
 };
 
-export const checkout = (name) => {
-    return { type: 'CHECKOUT_TO_BAG' };
+export const checkout = () => {
+    return { type: 'CHECKOUT' };
 };
 
-export const empty = (name) => {
+export const empty_bag = () => {
     return { type: 'EMPTY_BAG' };
 };

@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 import Button from './Button.js'
+import {removeItemToBag, checkout, empty_bag} from '../actions/bag'
+import {addItem, removeItem} from '../actions/items'
 import '../App.css';
 
 class Mybag extends Component {
 
     render() {
-
     this.handleCheckoutClick = () => {
         this.props.bag.forEach(bagElement => {
             console.log("bagElement :", bagElement )
@@ -26,7 +27,7 @@ class Mybag extends Component {
                 <header className="header">My bag</header>
                 {this.props.bag.map((item, id) => {
                     return (
-                        <div className = "cartItem">
+                        <div className = "cartItem" key={item.id}>
                             <Link key={item.id} to={`items/${item.id}`} style={{ textDecoration: 'none' }}>
                                 <div className="item">
                                     {item.name} - {item.brand}
@@ -52,12 +53,11 @@ const mapStateToProps = state => {
  
 const mapDispatchToProps = dispatch => {
   return {
-    addItemToBag: () => dispatch({type: 'ADD_ITEM_TO_BAG', payload: {name: "Mini", brand: "Chanel"}}),
-    removeItemToBag: (item) => dispatch({type: 'REMOVE_ITEM_TO_BAG', payload: item}),
-    checkout: () => dispatch({type: 'CHECKOUT'}),
-    empty_bag: () => dispatch({type: 'EMPTY_BAG'}),
-    addItem: (item) => dispatch({type: 'ADD_ITEM', payload: item}),
-    removeItem: (item) => dispatch({type: 'REMOVE_ITEM', payload: item}),
+    removeItemToBag: (item) => dispatch(removeItemToBag(item)),
+    checkout: () => dispatch(checkout()),
+    empty_bag: () => dispatch(empty_bag()),
+    addItem: (item) => dispatch(addItem(item)),
+    removeItem: (item) => dispatch(removeItem(item)),
   }
 }
 

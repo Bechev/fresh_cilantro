@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {fetchItems} from '../actions/items'
 import { connect } from 'react-redux'
 
 class Fetchitems extends Component {
@@ -86,7 +87,7 @@ const mapStateToProps = state => {
    
   const mapDispatchToProps = dispatch => {
     return {
-      fetchItems: (items) => dispatch({type: 'FETCH_ITEMS', payload: items}),
+      fetchItems: (items) => dispatch(fetchItems(items)),
     }
   }
   

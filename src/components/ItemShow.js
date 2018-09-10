@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import {addItemToBag} from '../actions/bag'
 import Button from './Button.js'
 import '../App.css';
 
@@ -40,7 +41,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
       return {
-        addItemToBag: (item) => dispatch({type: 'ADD_ITEM_TO_BAG', payload: item}),
+        addItemToBag: (item) => dispatch(addItemToBag(item)),
       }
     }
     

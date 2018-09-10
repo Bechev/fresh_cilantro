@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {addItem} from '../actions/items'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 import '../App.css';
@@ -103,7 +104,7 @@ const mapStateToProps = state => {
  
 const mapDispatchToProps = dispatch => {
   return {
-    addItem: (item) => dispatch({type: 'ADD_ITEM', payload: item}),
+    addItem: (item) => dispatch(addItem(item)),
   }
 }
 
