@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../App.css';
 
-export default class About extends Component{
+const About = () => 
+    <div>
+        <header className="header">About</header>
+        <div>
+            Shop details
+    </div>
+</div>
 
-    render(){
-        return (
-            <header className="header">About</header>
-        )
-    }
-}
+
+export default About 
