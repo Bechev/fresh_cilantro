@@ -62,3 +62,9 @@ header {
   display: inline-block;
   float: left;
 }
+
+.footer{
+  opacity: 0.5;
+  color: goldenrod;
+  
+}

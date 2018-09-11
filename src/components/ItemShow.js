@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import {addItemToBag} from '../actions/bag'
 import Button from './Button.js'
+import Footer from './Footer.js'
 import '../App.css';
 
 
@@ -28,6 +29,7 @@ class ItemShow extends Component{
                 <p>{this.item.description}</p>
             </div>
             <Button name="Add to bag" handleClick={() => this.props.addItemToBag(this.item)}/>
+            <Footer/>
         </div>
         )
     }
