@@ -18,16 +18,6 @@ class Additem extends Component {
         }
     }
 
-    componentWillMount(){
-        this.assignItemID()
-    }
-
-    createItemID(){
-        return (
-            this.props.items[this.props.items.length -1].id + 1
-        )
-    }
-
     assignItemID = () => {
         let itemID = this.createItemID()
         this.setState ({
@@ -70,7 +60,7 @@ class Additem extends Component {
     }
 
     handleClick = (event) =>{
-        this.props.addItem(this.state.item)
+        this.props.addItem(this.state.item, this.props.history)
     }
 
     render() {
@@ -87,9 +77,7 @@ class Additem extends Component {
                 <label> Description:
                 <textarea  name="description" placeholder="Item Description"  onChange={this.handleDescriptionChange}/>
                 </label>
-                <Link to={`items/${this.state.item.id}`}>
                 <input type="button" value="Request item" onClick={this.handleClick} />
-                </Link>
             </form>
         </div>
         )
@@ -104,7 +92,7 @@ const mapStateToProps = state => {
  
 const mapDispatchToProps = dispatch => {
   return {
-    addItem: (item) => dispatch(addItem(item)),
+    addItem: (item,history) => dispatch(addItem(item, history)),
   }
 }
 

@@ -9,26 +9,33 @@ import '../App.css';
 class ItemShow extends Component{
     constructor(){
         super()
-        var item
+        this.state = {
+            item:{}
+        }
+        
     }
     
-    getItem(id) {
-        return (
-            this.props.items.filter(function (el) {
-                return el.id.toString() === id
-            })
-        )
+    componentWillMount() {
+        this.fetchItem()
     }
 
+    fetchItem() {
+        console.log("this.props.match.params.itemID[0]: ",this.props.match.params.itemID)
+        fetch("http://localhost:3000/items/" + this.props.match.params.itemID)
+        .then(response => response.json())
+        .then(fetchedItem => this.setState ({
+            item: fetchedItem
+        }))
+    };
+
     render(){
-        this.item = this.getItem(this.props.match.params.itemID)[0]
         return (
         <div>
-            <header className="header">{this.item.name}</header>
+            <header className="header">{this.state.item.name}</header>
             <div>
-                <p>{this.item.description}</p>
+                <p>{this.state.item.description}</p>
             </div>
-            <Button name="Add to bag" handleClick={() => this.props.addItemToBag(this.item)}/>
+            <Button name="Add to bag" handleClick={() => this.props.addItemToBag(this.state.item)}/>
             <Footer/>
         </div>
         )

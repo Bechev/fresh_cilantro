@@ -9,11 +9,11 @@ export default function itemsReducer(state = [], action) {
             return  [].concat(state, action.payload)
         
         case 'REMOVE_ITEM':
-            console.log("Removed an item", state.items);
-            return state.filter((val) => val !== action.payload)
+            console.log("Removed an item", action.payload);
+            return state.filter((val) => val.id !== action.payload.id)
 
         case 'FETCH_ITEMS':
-            console.log("fetched items", state.items);
+            console.log("fetched items", action.payload);
             return action.payload
         
         default:

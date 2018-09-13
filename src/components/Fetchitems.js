@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import {fetchItems} from '../actions/items'
 import { connect } from 'react-redux'
 
@@ -8,7 +8,7 @@ class Fetchitems extends Component {
         return null
     }
 
-    componentDidMount() {
+    componentWillMount() {
         this.fetchItems()
     }
 
