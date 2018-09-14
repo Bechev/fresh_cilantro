@@ -9,14 +9,14 @@ class Fetchitems extends Component {
     }
 
     componentWillMount() {
-        this.fetchItems()
+        this.fetchItemsFromServer()
     }
 
-    fetchItems() {
-        const items = fetch("http://localhost:3000/items.json")
+    fetchItemsFromServer() {
+        const loadedItems = fetch("http://localhost:3000/items")
         .then(response => response.json())
-        .then(json => this.props.fetchItems(json))
-        return items
+        .then(items => this.props.fetchItems(items))
+        return loadedItems
     };
     
 }
