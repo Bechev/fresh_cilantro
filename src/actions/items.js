@@ -8,9 +8,7 @@ export function addItem(item, history){
                 "Content-Type": "application/json; charset=utf-8"
             },
             body: JSON.stringify({
-                name: item.name,
-                brand: item.brand,
-                description: item.description
+                item: item
             })
         })
         .then(response => response.json())
