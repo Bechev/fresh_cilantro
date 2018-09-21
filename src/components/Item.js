@@ -8,14 +8,26 @@ export default class Item extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            like: 0
+            like: this.props.item.likes
         };
       }
-      
+
     handleClick = () => {
-        console.log(this.state.like)
-        this.setState({
-            like: this.state.like + 1
+        const incrementedLikes = this.state.like + 1
+        fetch("http://localhost:3000/items/"+this.props.item.id, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json; charset=utf-8"
+            },
+            body: JSON.stringify({
+                likes: incrementedLikes
+            })
+        })
+        .then(response => response.json())
+        .then(() => { 
+            this.setState({
+                like: incrementedLikes
+            })
         })
     }
 
@@ -25,7 +37,7 @@ export default class Item extends Component {
             <div>
                 <Link key={this.props.item.id} to={`items/${this.props.item.id}`} style={{ textDecoration: 'none' }}>
                     <div className="item float" >
-                        {this.props.item.name} - {this.props.item.brand}<br></br>
+                        {this.props.item.name} - {this.props.item.brand} - {this.props.likes}<br></br>
                     </div>
                 </Link>
                 <Button className ="item" name={likes ? likes : 0 } handleClick={this.handleClick}/>
