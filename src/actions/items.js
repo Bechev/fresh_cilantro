@@ -1,5 +1,6 @@
 
 export function addItem(item, history){
+    console.log('C')
     return (dispatch) => {
         dispatch({ type: 'START_ADDING_ITEM_REQUEST' });    
         return fetch("http://localhost:3000/items", {
@@ -13,10 +14,12 @@ export function addItem(item, history){
         })
         .then(response => response.json())
         .then(item => { 
+            console.log('D')
             dispatch({type:'ADD_ITEM', payload:item}),
             history.push('/items/'+item.id)
         })
-    }    
+    }
+    console.log('E')    
 };
 
 

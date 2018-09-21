@@ -60,7 +60,10 @@ class Additem extends Component {
     }
 
     handleClick = (event) =>{
+        event.preventDefault()
+        console.log('A')
         this.props.addItem(this.state.item, this.props.history)
+        console.log('B')
     }
 
     render() {
