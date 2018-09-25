@@ -28,11 +28,11 @@ class Mybag extends Component {
                 {this.props.bag.map((item, id) => {
                     return (
                         <div className = "cartItem" key={item.id}>
-                            <Link key={item.id} to={`items/${item.id}`} style={{ textDecoration: 'none' }}>
                                 <div className="item">
+                            <Link key={item.id} to={`items/${item.id}`} style={{ textDecoration: 'none' }}>
                                     {item.name} - {item.brand}
-                                </div>
                             </Link>
+                                </div>
                             <Button name= "Remove from bag" handleClick={() => this.props.removeItemToBag(item.id)}/><br></br>
                         </div>
                     )
