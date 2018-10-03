@@ -10,19 +10,15 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            updated: true,
-            sorted: false,
             itemsList: []
         };
       }
 
     handleClick = () => {
-        console.log("this.state.itemsList: ",this.state.itemsList)
         const sortedItemsList = [].concat(this.props.items)
         .sort((a, b) => a.likes - b.likes)
         this.setState({
-            itemsList: sortedItemsList,
-            sorted: true
+            itemsList: sortedItemsList
         })
     }
 
@@ -56,7 +52,6 @@ class Home extends Component {
 
 
     render() {
-        const isSorted = this.state.sorted
         return (
             <div>
                 <header className="header">Welcome to Fresh Cilantro Boutique</header>

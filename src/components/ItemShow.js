@@ -15,7 +15,7 @@ class ItemShow extends Component{
         
     }
     
-    componentWillMount() {
+    componentDidMount() {
         this.fetchItem()
     }
 

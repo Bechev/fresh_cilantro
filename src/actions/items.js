@@ -22,8 +22,6 @@ export function addItem(item, history){
     console.log('E')    
 };
 
-
-
 export function removeItem(item){
     return (dispatch) => {
         dispatch({ type: 'START_ADDING_ITEM_REQUEST' });  
@@ -41,9 +39,12 @@ export function removeItem(item){
     }
 }
 
-export function fetchItems(items){
-    return { 
-        type: 'FETCH_ITEMS',
-        payload: items,
-        };
+export function fetchItems(){
+    return(dispatch) =>{
+        dispatch ({type:'START_FETCHING_ITEMS'}) 
+        return fetch("http://localhost:3000/items")
+        .then(response => response.json())
+        .then(items => dispatch({type:'FETCH_ITEMS', payload:items}))
+        }
 }
+

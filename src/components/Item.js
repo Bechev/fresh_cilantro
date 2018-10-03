@@ -14,9 +14,6 @@ export default class Item extends Component {
 
     handleClick = () => {
         const incrementedLikes = this.state.like ? (this.state.like + 1) : (this.props.item.likes + 1) 
-        console.log("incrementedLikes: ",incrementedLikes )
-        console.log("this.state.like: ",this.state.like )
-        console.log("this.props.item.likes: ",this.props.item.likes )
         fetch("http://localhost:3000/items/"+this.props.item.id, {
             method: "PUT",
             headers: {

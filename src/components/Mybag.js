@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 import Button from './Button.js'
+import Item from './Item.js'
 import {removeItemToBag, checkout, empty_bag} from '../actions/bag'
 import {addItem, removeItem} from '../actions/items'
 import '../App.css';
@@ -28,11 +29,7 @@ class Mybag extends Component {
                 {this.props.bag.map((item, id) => {
                     return (
                         <div className = "cartItem" key={item.id}>
-                                <div className="item">
-                            <Link key={item.id} to={`items/${item.id}`} style={{ textDecoration: 'none' }}>
-                                    {item.name} - {item.brand}
-                            </Link>
-                                </div>
+                            <Item item={item} id={id}/>
                             <Button name= "Remove from bag" handleClick={() => this.props.removeItemToBag(item.id)}/><br></br>
                         </div>
                     )

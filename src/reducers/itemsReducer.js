@@ -1,6 +1,5 @@
 export default function itemsReducer(state = [], action) {
 
-
     switch (action.type) {
 
         case 'ADD_ITEM':
